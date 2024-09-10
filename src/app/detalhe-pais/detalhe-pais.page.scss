@@ -1,0 +1,26 @@
+.header {
+    display: flex;
+    flex-direction: row;
+}
+
+.fusos {
+    display: flex;
+    flex-direction: column;
+}
+
+.fronteiras {
+    cursor: pointer;
+}
+
+.space {
+    margin-left: 2rem;
+}
+
+.loading-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-left: 100vh;
+    margin-top: 30vh;
+}

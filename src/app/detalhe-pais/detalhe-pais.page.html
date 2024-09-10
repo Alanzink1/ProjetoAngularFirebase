@@ -1,0 +1,59 @@
+<ion-content [fullscreen]="true">
+  <ng-container *ngIf="this.isLoading" class="loading-center">
+    <ion-spinner class="loading-center"></ion-spinner>
+  </ng-container>
+
+  <ng-container *ngIf="!this.isLoading">
+
+    <ng-container *ngFor="let pais of this.paises">
+      <ion-row class="ion-justify-content-start header">
+        <ion-row>
+          <ion-col size="12" size-lg="5">
+            <img src="{{pais.flags.png}}" alt="">
+          </ion-col>
+          <ion-col>
+            <h1>{{pais.name.common}}</h1>
+            <h3>{{pais.name.official}}</h3>
+          </ion-col>
+        </ion-row>
+      </ion-row>
+
+      <ion-row class="fusos">
+        <ion-col>
+          <h1>Capital: {{pais.capital}}</h1>
+          <h1>População: {{pais.population}}</h1>
+          <!-- <h1>Idiomas: {{pais.languages.por}}</h1> -->
+          <h1>Área: {{pais.area}}</h1>
+          <h1>Região: {{pais.region}}</h1>
+          <h1>Sub-região: {{pais.subregion}}</h1>
+
+          <h1>Fuso Horários do País:</h1>
+          <ng-container *ngFor="let fuso of this.pais.timezones" class="fusos">
+            <h3 class="space">-{{fuso}}</h3>
+          </ng-container>
+
+          <ng-container *ngIf="pais.independent">
+            <h1>{{pais.name.common}} é um país independente!</h1>
+          </ng-container>
+
+          <ng-container *ngIf="!pais.independent">
+            <h1>{{pais.name.common}} não é um país independente!</h1>
+          </ng-container>
+
+          <ng-container *ngIf="pais.borders">
+            <h1>Veja mais sobre os países que fazem fronteira:</h1>
+            <ng-container *ngFor="let fronteira of pais.borders">
+              <h1 (click)="verFronteira(fronteira)" class="fronteiras space">-{{fronteira}}</h1>
+            </ng-container>
+          </ng-container>
+
+          <ng-container *ngIf="!pais.borders">
+            <h1>Não há países que fazem fronteira com {{pais.name.common}}</h1>
+          </ng-container>
+
+
+        </ion-col>
+      </ion-row>
+    </ng-container>
+  </ng-container>
+</ion-content>
