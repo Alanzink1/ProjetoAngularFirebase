@@ -1,0 +1,12 @@
+<ion-content class="content">
+  <h1 class="ion-text-center">{{this.galeria.titulo}}</h1>
+  <div class="grid-container">
+    <ng-container *ngFor="let item of this.galeria.topicos">
+      <div class="grid-item">
+        <h2>{{item.titulo}}</h2>
+        <img src="{{ item.imagem1 }}" class="image-topico" alt="">
+        <img src="{{ item.imagem2 }}" class="image-topico" alt="">
+      </div>
+    </ng-container>
+  </div>
+</ion-content>

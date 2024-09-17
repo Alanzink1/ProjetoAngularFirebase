@@ -1,0 +1,18 @@
+/* Estilos para o contêiner da imagem */
+.image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+  width: 100vw;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.full-width-image {
+  width: 100%;
+  height: 100%; 
+  object-fit: cover; 
+  display: block;
+}
