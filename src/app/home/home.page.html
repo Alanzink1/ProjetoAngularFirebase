@@ -1,77 +1,30 @@
 <ion-content [fullscreen]="true">
 
-    <!-- Menu Segmentos -->
+  <app-menu></app-menu>
+
+  <!-- Cards a -->
+
     <ion-row class="ion-justify-content-center">
-        <ion-col size="12" size-lg="5">
-            <ion-segment value="usuarios" (ionChange)="trocar($event)">
-                <ion-segment-button value="usuarios">Usuários</ion-segment-button>
-                <ion-segment-button value="treinos">Treinos</ion-segment-button>
-            </ion-segment>
+        <ion-col size="6" size-lg="2" class="fundo chrome">
+          <h2 style="color: #fff;">GOOGLE CHROME</h2>
         </ion-col>
+        <ion-col size="6" size-lg="2" class="fundo opera"></ion-col>
+        <ion-col size="6" size-lg="2" class="fundo edge"></ion-col>
+        <ion-col size="6" size-lg="2" class="fundo firefox"></ion-col>
     </ion-row>
 
-    <!-- Lista de Usuários -->
-    <ion-row class="ion-justify-content-center" *ngIf="this.segments == 'usuarios'">
-        <ion-col size="12" size-lg="5">
-            <ng-container *ngFor="let user of this.usuarios">
-                <ion-item color="secondary">
-                    <ion-label color="primary">
-                        <h2>{{user.nome}}</h2>
-                        <h3>Idade: {{user.idade}}</h3>
-                        <h3>Gênero: {{user.genero}}</h3>
-                    </ion-label>
-                </ion-item>
-                <ion-accordion-group>
-                    <ng-container *ngFor="let rotina of user.rotinas">
-                        <ion-accordion value="{{ rotina.dia }}">
-                            <ion-item slot="header">
-                                <ion-label>{{ rotina.dia }}</ion-label>
-                            </ion-item>
-                            <div class="ion-padding" slot="content">
-                                <ng-container *ngFor="let treino of rotina.treinos">
-                                    <ion-item>
-                                        <ion-label color="primary">{{ treino }}</ion-label>
-                                    </ion-item>
-                                </ng-container>
-                            </div>
-                        </ion-accordion>
-                    </ng-container>
-                </ion-accordion-group>
-            </ng-container>
+    <!-- Título -->
 
-        </ion-col>
+    <ion-row>
+      <ion-col size="12" class="ion-text-center">
+        <h1>BROWSER SYSTEM</h1>
+      </ion-col>
     </ion-row>
 
-    <!-- Lista de treinos -->
-    <ion-row class="ion-justify-content-center" *ngIf="this.segments == 'treinos'">
-        <ion-col size="12" size-lg="5">
-            <ng-container *ngFor="let treino of this.treinos">
-                <ion-item color="secondary">
-                    <ion-label color="tertiary">
-                        <h2>{{treino.nome}}</h2>
-                        <h3>Idade: {{treino.series}}</h3>
-                    </ion-label>
-                </ion-item>
-                <ion-accordion-group>
-                    <ng-container>
-                        <ion-accordion value="{{ treino.nome }}">
-                            <ion-item slot="header">
-                                <ion-label>Ilustração</ion-label>
-                            </ion-item>
-                            <div class="ion-padding" slot="content">
-                                <ng-container>
-                                    <ion-item>
-                                        <ion-img class="foto-treino ion-justify-content-center"
-                                            src="{{ treino.foto }}"
-                                          ></ion-img>
-                                    </ion-item>
-                                </ng-container>
-                            </div>
-                        </ion-accordion>
-                    </ng-container>
-                </ion-accordion-group>
-            </ng-container>
-        </ion-col>
+    <!-- DESCRICÃO DO SISTEMA DE NAVEGADORES -->
+
+    <ion-row>
+      <ion-col size="12" size-lg="6" class="saude"></ion-col>
     </ion-row>
 
 </ion-content>
